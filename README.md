@@ -1,15 +1,15 @@
 # Loogle
 Loogle is a search engine and web crawler which can search indexed websites and images, and then use keywords to be searched later. 
 
-Massive shoutout to Doogle the backend we use, we may or may not expened this search engine with videos and shit. But the backend
-is pretty much all Doogle.
+Massive shoutout to Loogle the backend we use, we may or may not expened this search engine with videos and shit. But the backend
+is pretty much all Loogle.
 
-https://github.com/safesploit/doogle
+https://github.com/safesploit/Loogle
 
 Written primarily in OOP style PHP with the intent of better understanding OOP and how web crawlers work.
 
 <p align="center">
-  <img width="527" alt="DoogleHomepage-Preview" src="https://user-images.githubusercontent.com/10171446/165316199-b0fe279c-cb11-4a36-84b8-53a514ac488a.png">
+  <img width="527" alt="LoogleHomepage-Preview" src="https://user-images.githubusercontent.com/10171446/165316199-b0fe279c-cb11-4a36-84b8-53a514ac488a.png">
 </p>
 
 # Features
@@ -43,11 +43,11 @@ Written primarily in OOP style PHP with the intent of better understanding OOP a
   - [Telemetry](#telemetry)
   - [User-Agent](#user-agent)
 - [Preview Images](#preview-images)
-  - [Doogle Homepage](#doogle-homepage)
-  - [Doogle Search - Sites](#doogle-search---sites)
-  - [Doogle Search - Images](#doogle-search---images)
+  - [Loogle Homepage](#Loogle-homepage)
+  - [Loogle Search - Sites](#Loogle-search---sites)
+  - [Loogle Search - Images](#Loogle-search---images)
   - [Pagination System](#pagination-system)
-  - [doogleBot Crawl Form](#dooglebot-crawl-form)
+  - [LoogleBot Crawl Form](#Looglebot-crawl-form)
 - [Preview Video](#preview-video)
 
 # Setup and Usage
@@ -58,19 +58,19 @@ Two methods of setup are discussed.
 
 ## Docker
 
-Docker configuration files are available at [doogle-docker](https://github.com/safesploit/doogle-docker).
+Docker configuration files are available at [Loogle-docker](https://github.com/safesploit/Loogle-docker).
 
 Presuming you already have [Docker](https://www.docker.com/) v3.9 (or greater) installed and configured.
 
-    git clone https://github.com/safesploit/doogle-docker.git
-    cd doogle-docker
+    git clone https://github.com/safesploit/Loogle-docker.git
+    cd Loogle-docker
     sh build.sh
 
 <p align="center">
 <img width="857" alt="Screenshot 2023-02-22 at 21 11 33" src="https://user-images.githubusercontent.com/10171446/220760089-71baee5a-19ce-43e6-9cd5-35ce9e143400.png">
 <img width="857" alt="image" src="https://user-images.githubusercontent.com/10171446/220760298-65e0b64e-3724-4e8e-b9ec-a86ba20d58c8.png">
 
-Doogle is now accessible via [localhost:8000](http://localhost:8000). 
+Loogle is now accessible via [localhost:8000](http://localhost:8000). 
 
 For debugging phpMyAdmin has also been included on [localhost:8001](http://localhost:8001).
 
@@ -81,11 +81,11 @@ For debugging phpMyAdmin has also been included on [localhost:8001](http://local
 v1.0.0-beta.1 is supported and tested in PHP 7.4, 8.0 and 8.1.
 
 Please refer to [XAMPP](https://www.apachefriends.org/index.html) for the web server, PHP server and MySQL server configuration.
-XAMPP is the simplest method as several servers are required to use Doogle.
+XAMPP is the simplest method as several servers are required to use Loogle.
 
 [MySQL Setup on XAMPP](https://www.rose-hulman.edu/class/se/csse290-WebProgramming/201520/SupportCode/SQL-setup.html) will use PHPMyAdmin as a GUI method of setting up the database.
 
-Once logged into the database via PHPMyAdmin under the **PHPMyAdmin > SQL** tab, the content of 'doogle-tables-no-data.sql' can be pasted into the field
+Once logged into the database via PHPMyAdmin under the **PHPMyAdmin > SQL** tab, the content of 'Loogle-tables-no-data.sql' can be pasted into the field
 
 <img width="960" alt="Image1-PHPMyAdmin" src="https://user-images.githubusercontent.com/10171446/165310962-7ec771d2-50a0-4117-87f8-60373f694e55.png">
 
@@ -99,13 +99,13 @@ Once logged into the database via PHPMyAdmin under the **PHPMyAdmin > SQL** tab,
 
 Amend the password _PASSWORD_HERE_ using a strong [random password](https://passwordsgenerator.net/).
 
-    mysql> CREATE USER IF NOT EXISTS 'doogle'@'localhost' IDENTIFIED BY 'PASSWORD_HERE';
+    mysql> CREATE USER IF NOT EXISTS 'Loogle'@'localhost' IDENTIFIED BY 'PASSWORD_HERE';
 
 ### SQL User Permissions
 
-The SQL user 'doogle' must have SELECT, INSERT and UPDATE privileges:
+The SQL user 'Loogle' must have SELECT, INSERT and UPDATE privileges:
 
-    mysql> GRANT SELECT, INSERT, UPDATE ON `doogle`.* TO 'doogle'@'localhost';
+    mysql> GRANT SELECT, INSERT, UPDATE ON `Loogle`.* TO 'Loogle'@'localhost';
     
   - INSERT is used for crawling
   - SELECT is required for the search engine to return queries
@@ -115,12 +115,12 @@ The SQL user 'doogle' must have SELECT, INSERT and UPDATE privileges:
 
 In the file config.php the following must be entered correctly for your database configuration:
 
-    $dbname = "doogle";
+    $dbname = "Loogle";
     $dbhost = "localhost";
-    $dbuser = "doogle";
+    $dbuser = "Loogle";
     $dbpass = "";
 
-In the file 'doogle-tables-no-data.sql' the database will be created as 'doogle'.
+In the file 'Loogle-tables-no-data.sql' the database will be created as 'Loogle'.
 
 ## Crawling Websites to Populate Images and Sites tables
 
@@ -148,7 +148,7 @@ Check the tables `images` and `sites` in the database to ensure they are being p
 <img width="960" alt="Image2-PHPMyAdmin" src="https://user-images.githubusercontent.com/10171446/165312292-c2830b80-365d-4a39-b176-8226bd0d7f65.png">
 
 
-Once the tables are populated visit the Doogle homepage and search!
+Once the tables are populated visit the Loogle homepage and search!
 See preview images.
 
 # Programming Logic
@@ -219,7 +219,7 @@ The image below shows an example layout:
 
 ## Site Search - Trimming Results
 
-As shown in the preview images, Doogle when performing a site search will return (title, URL and description) for each result.
+As shown in the preview images, Loogle when performing a site search will return (title, URL and description) for each result.
 
 However, to make some results easier to read, a trimming process is performed. Inside ./classes/SiteResultsProvider.php the function trimField() is called:
 
@@ -251,17 +251,17 @@ As indicated on line 9:
 
 
 # Preview Images
-## Doogle Homepage
+## Loogle Homepage
 
-<img width="701" alt="Image3-DoogleHomepage-Edge" src="https://user-images.githubusercontent.com/10171446/165313393-fcfdb9fc-1b19-4c8f-ac08-b96ff393ab63.png">
+<img width="701" alt="Image3-LoogleHomepage-Edge" src="https://user-images.githubusercontent.com/10171446/165313393-fcfdb9fc-1b19-4c8f-ac08-b96ff393ab63.png">
 
-## Doogle Search - Sites
+## Loogle Search - Sites
 
-<img width="701" alt="Image4-DoogleSearch-PoC" src="https://user-images.githubusercontent.com/10171446/165313470-02c30d0a-e7e6-4fcf-8c09-6be9e633fc0f.png">
+<img width="701" alt="Image4-LoogleSearch-PoC" src="https://user-images.githubusercontent.com/10171446/165313470-02c30d0a-e7e6-4fcf-8c09-6be9e633fc0f.png">
 
-## Doogle Search - Images
+## Loogle Search - Images
 
-<img width="882" alt="Image5-DoogleSearch-PoC-images" src="https://user-images.githubusercontent.com/10171446/165313548-686a79e3-5b1d-4e9e-a3d7-ab7775a9b171.png">
+<img width="882" alt="Image5-LoogleSearch-PoC-images" src="https://user-images.githubusercontent.com/10171446/165313548-686a79e3-5b1d-4e9e-a3d7-ab7775a9b171.png">
 
 ### Image Preview
 
@@ -269,7 +269,7 @@ Image preview is done using Fancybox.
 
 The title, image URL and site URL are available on the bottom left corner.
 
-<img width="883" alt="Image9-DoogleSearch-imagePreview" src="https://user-images.githubusercontent.com/10171446/165315386-8bc4a25e-0a9f-4622-82b8-d733bc343a3b.png">
+<img width="883" alt="Image9-LoogleSearch-imagePreview" src="https://user-images.githubusercontent.com/10171446/165315386-8bc4a25e-0a9f-4622-82b8-d733bc343a3b.png">
 
 
 
@@ -277,27 +277,24 @@ The title, image URL and site URL are available on the bottom left corner.
 
 Naturally, certain search terms may return many results like 'bbc'.
 
-To which Doogle only displays **20 sites** per page.
+To which Loogle only displays **20 sites** per page.
 At the bottom of the page, we can view the next 10 pages.
 
 ### Results Shown
 
-<img width="883" alt="Image6-DoogleSearch-pagination-ResultsShown" src="https://user-images.githubusercontent.com/10171446/165314211-5daf2903-5ecc-44ad-942a-2270a361dec5.png">
+<img width="883" alt="Image6-LoogleSearch-pagination-ResultsShown" src="https://user-images.githubusercontent.com/10171446/165314211-5daf2903-5ecc-44ad-942a-2270a361dec5.png">
 
 ### Bottom of Page
 
-<img width="883" alt="Image7-DoogleSearch-pagination-Bottom" src="https://user-images.githubusercontent.com/10171446/165314516-d00bf38a-6fef-467c-9182-88d0d6ce07d2.png">
+<img width="883" alt="Image7-LoogleSearch-pagination-Bottom" src="https://user-images.githubusercontent.com/10171446/165314516-d00bf38a-6fef-467c-9182-88d0d6ce07d2.png">
 
 ### Bottom of Page 13
 
-<img width="883" alt="Image8-DoogleSearch-pagination-scrollingThrough" src="https://user-images.githubusercontent.com/10171446/165314716-08834b0c-4ba0-4e90-b466-58a57e91bf69.png">
+<img width="883" alt="Image8-LoogleSearch-pagination-scrollingThrough" src="https://user-images.githubusercontent.com/10171446/165314716-08834b0c-4ba0-4e90-b466-58a57e91bf69.png">
 
-## doogleBot Crawl Form
+## LoogleBot Crawl Form
 
 An HTML form to submit a URL for crawling
 
-<img width="581" alt="Image10-doogleBot-Crawler-formpng" src="https://user-images.githubusercontent.com/10171446/165463270-d36f7b78-379c-46da-b859-f5dde9304668.png">
+<img width="581" alt="Image10-LoogleBot-Crawler-formpng" src="https://user-images.githubusercontent.com/10171446/165463270-d36f7b78-379c-46da-b859-f5dde9304668.png">
 
-# Preview Video
-
-[Doogle Search demo - YouTube](https://youtu.be/clDt4Sg7ako)
