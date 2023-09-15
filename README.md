@@ -8,10 +8,6 @@ https://github.com/safesploit/Loogle
 
 Written primarily in OOP style PHP with the intent of better understanding OOP and how web crawlers work.
 
-<p align="center">
-  <img width="527" alt="LoogleHomepage-Preview" src="https://user-images.githubusercontent.com/10171446/165316199-b0fe279c-cb11-4a36-84b8-53a514ac488a.png">
-</p>
-
 # Features
 
 - Search sites
