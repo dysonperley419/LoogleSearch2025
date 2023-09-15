@@ -1,5 +1,10 @@
-# Doogle
-Doogle is a search engine and web crawler which can search indexed websites and images, and then use keywords to be searched later. 
+# Loogle
+Loogle is a search engine and web crawler which can search indexed websites and images, and then use keywords to be searched later. 
+
+Massive shoutout to Doogle the backend we use, we may or may not expened this search engine with videos and shit. But the backend
+is pretty much all Doogle.
+
+https://github.com/safesploit/doogle
 
 Written primarily in OOP style PHP with the intent of better understanding OOP and how web crawlers work.
 
