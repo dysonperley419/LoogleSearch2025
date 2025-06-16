@@ -12,16 +12,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- User Creation: `doogle`
+-- User Creation: `loogle`
 --
-CREATE USER IF NOT EXISTS 'doogle'@'%' IDENTIFIED BY 'PASSWORD_HERE';
-GRANT SELECT, INSERT, UPDATE ON `doogle`.* TO 'doogle'@'%';
+CREATE USER IF NOT EXISTS 'loogle'@'%' IDENTIFIED BY 'PASSWORD_HERE';
+GRANT SELECT, INSERT, UPDATE ON `loogle`.* TO 'loogle'@'%';
 
 --
--- Database: `doogle`
+-- Database: `loogle`
 --
-CREATE DATABASE IF NOT EXISTS `doogle` DEFAULT CHARACTER SET utf8mb4;
-USE `doogle`;
+CREATE DATABASE IF NOT EXISTS `loogle` DEFAULT CHARACTER SET utf8mb4;
+USE `loogle`;
 
 -- --------------------------------------------------------
 
@@ -53,6 +53,29 @@ CREATE TABLE IF NOT EXISTS `sites` (
   `keywords` varchar(512) NOT NULL,
   `clicks` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table strcuture for table 'news'
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` int(11) NOT NULL,
+  `url` varchar(512) NOT NULL,
+  `title` varchar(512) NOT NULL,
+  `description` text NOT NULL,
+  `source` varchar(255) NOT NULL,
+  `publishedDate` datetime NOT NULL,
+  `imageUrl` varchar(512) NOT NULL,
+  `clicks` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 

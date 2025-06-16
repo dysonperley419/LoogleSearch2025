@@ -1,7 +1,13 @@
 <?php
 ob_start();
 
-$dbname = "loogle-search";
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+
+$host = $_SERVER['HTTP_HOST'];
+
+define('SITE_URL', $protocol . '://' . $host);
+
+$dbname = "loogle";
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "nicknick";

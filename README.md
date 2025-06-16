@@ -1,12 +1,15 @@
 # Loogle
-Loogle is a search engine and web crawler which can search indexed websites and images, and then use keywords to be searched later. 
+
+Loogle is a search engine and has a web crawler which can search indexed websites, images, grab news articles, and then use keywords to be searched later. 
 
 Massive shoutout to Loogle the backend we use, we may or may not expened this search engine with videos and shit. But the backend
 is pretty much all Loogle.
 
 https://github.com/safesploit/Loogle
 
-Written primarily in OOP style PHP with the intent of better understanding OOP and how web crawlers work.
+Written primarily in whatever style PHP for Loogle!
+
+Based on https://github.com/safesploitOrg/doogle
 
 # Features
 
@@ -18,11 +21,11 @@ Written primarily in OOP style PHP with the intent of better understanding OOP a
     *   Image preview using Fancybox
     *   Image search page responds dynamically
 - Clean homepage
-- Filters broken image results
 - Organises search results by clicks/visits
 - Pagination system at the bottom of the search page
-- Shows 'results found' for search term
-- Supports non-latin characters (UTF-8)
+- Loogle Instant
+- 2013 Google Search UI
+- APIs!
 
 # Table of Contents 
 
@@ -66,9 +69,7 @@ Presuming you already have [Docker](https://www.docker.com/) v3.9 (or greater) i
 <img width="857" alt="Screenshot 2023-02-22 at 21 11 33" src="https://user-images.githubusercontent.com/10171446/220760089-71baee5a-19ce-43e6-9cd5-35ce9e143400.png">
 <img width="857" alt="image" src="https://user-images.githubusercontent.com/10171446/220760298-65e0b64e-3724-4e8e-b9ec-a86ba20d58c8.png">
 
-Loogle is now accessible via [localhost:8000](http://localhost:8000). 
-
-For debugging phpMyAdmin has also been included on [localhost:8001](http://localhost:8001).
+Loogle is now accessible via [localhost:8010](http://localhost:8010). 
 
 </p>
 
