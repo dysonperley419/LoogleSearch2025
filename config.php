@@ -7,10 +7,10 @@ $host = $_SERVER['HTTP_HOST'];
 
 define('SITE_URL', $protocol . '://' . $host);
 
-$dbname = "loogle";
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "nicknick";
+$dbname = "m11265_loogle";
+$dbhost = "mysql2.serv00.com";
+$dbuser = "m11265_dexptuba3";
+$dbpass = "Dysonp2013";
 
 try 
 {
